@@ -1,0 +1,311 @@
+@charset "UTF-8";
+
+body{
+    height: 100%;
+    width: 100%;
+
+    padding: 0;
+    border: 0;
+    margin: 0;
+
+    cursor: default;
+}
+
+body:hover .content{
+    opacity: 1;
+}
+
+.background{
+    position:absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/bodybackgroundblur.png);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backgroundNormal{
+    position:absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/bodybackgroundblur.png);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    animation: backgroundNormal 1s ease forwards;
+}
+
+.backgroundJuan{
+    position:absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/bodybackgroundblur.png);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    animation: backgroundjuan 1s ease forwards;
+}
+
+@keyframes backgroundjuan{
+    0%{
+        background-image: url(../img/bodybackgroundblur.png);
+    }
+
+    100%{
+        background-image: url(../img/juan.jpg);
+    }
+}
+
+@keyframes backgroundNormal{
+    0%{
+        background-image: url(../img/juan.jpg);
+    }
+
+    100%{
+        background-image: url(../img/bodybackgroundblur.png)
+    }
+}
+
+header{
+    position: absolute;
+    border-bottom: 5px solid rgb(214, 139, 0);
+    top: 0;
+    left: 0;
+
+    height: 100px;
+    width: 100%;
+    background-color: rgba(255, 166, 0, 0.5);
+
+    opacity: 1;
+}
+
+header h1{
+    opacity: 0.75;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24pt;
+    text-align: center;
+
+    color: white;
+
+    -webkit-text-stroke: 1pt;
+    -webkit-text-stroke-color: black;
+
+    transition: 1s;
+}
+
+header:hover h1{
+    opacity: 1;
+    font-size: 25pt;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+
+    height: 50px;
+    width: 100%;
+
+    background-color: black;
+
+    opacity: 0.5;
+
+    transition: 750ms;
+}
+
+footer p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: auto;
+    text-align: center;
+
+    border: 0;
+
+    color: white;
+    opacity: 0;
+
+    transition: 750ms;
+}
+
+footer:hover{
+    opacity: 1;
+}
+
+footer:hover p{
+    opacity: 1;
+}
+
+#juan{
+    position: absolute;
+    left: calc(50% - 100px);
+    width: 200px;
+
+    opacity: 0;
+}
+
+.content{
+    opacity: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+    border: 5px solid orange;
+    border-radius: 25px;
+
+    width: 750px;
+    height: 500px;
+    position: absolute;
+
+    top: calc(50% - 250px);
+    left: calc(50% - 375px);
+
+    transition: 750ms;
+}
+
+.content div{
+    height: calc(100% - 10px);
+    width: calc(100% - 40px);
+
+    padding: 5px 20px;
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+.content:hover{
+    border: 5px solid rgb(255, 186, 57);
+}
+
+.content:hover h1{
+    color: rgb(255, 136, 0);
+}
+
+.content div h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24pt;
+    font-weight: 700;
+    text-align: center;
+    -webkit-text-stroke: 1pt;
+    -webkit-text-stroke-color: black;
+    color: rgb(197, 105, 0);
+
+    transition: 500ms;
+}
+
+.content div p{
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    text-align: justify;
+    text-indent: 40px;
+    color: rgb(238, 135, 0);
+}
+
+.content div button{
+    position: absolute;
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+    font-size: 14pt;
+    color: rgb(238, 135, 0);
+
+    padding: 10px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border: 3px solid orange;
+    border-radius: 10px;
+
+    transition: 250ms;
+}
+
+
+.content div button:hover {
+    border: 3px solid rgb(200, 200, 200);
+    background-color: green;
+    color: rgb(255, 255, 255);
+
+    cursor: pointer;
+}
+
+.content div button:active {
+    background-color: rgb(0, 90, 0);
+}
+
+.content div button::before {
+    content: "Botão";
+  }
+  
+.content div button:hover::before {
+animation: expand 500ms ease forwards;
+}
+
+@keyframes expand {
+    0% {content: "Botão";}
+    11%{content: "Botão ";}
+    22%{content: "Botão m";}
+    33%{content: "Botão me";}
+    44%{content: "Botão mei";}
+    55%{content: "Botão meio";}
+    66%{content: "Botão meio ";}
+    77%{content: "Botão meio S";}
+    88%{content: "Botão meio SU";}
+   100%{content: "Botão meio SUS";}
+}
+
+.juanEnter{
+    animation: JuanShow 1s ease forwards;
+}
+
+.juanLeave{
+    animation: JuanDontShow 1s ease forwards;
+}
+
+@keyframes JuanShow {
+    0%{
+        opacity: 0;
+        width: 200px;
+    }
+
+    50%{
+        opacity: 1;
+        width: 210px;
+    }
+
+    100%{
+        opacity: 1;
+        width: 200px;
+    }
+}
+
+@keyframes JuanDontShow{
+    0%{
+        opacity: 1;
+        width: 200px;
+    }
+
+    50%{
+        opacity: 1;
+        width: 210px;
+    }
+
+    100%{
+        opacity: 0;
+        width: 200px;
+    }
+}
